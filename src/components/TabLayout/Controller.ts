@@ -4,12 +4,17 @@ import { Leagues } from '../../types/leagues';
 
 interface TabLayoutControllerObject {
   states: {
-    allLegaues?: Leagues[];
+    allLeagues?: Leagues[];
+    tabIndex: number;
   };
+  actions: {
+    handleTabChange: (index: number) => void;
+  }
 }
 
 export const TabLayoutController = (): TabLayoutControllerObject => {
-  const [allLegaues, setAllLeagues] = useState<Leagues[]>();
+  const [allLeagues, setAllLeagues] = useState<Leagues[]>();
+  const [tabIndex, setTabIndex] = useState<number>(0);
 
   const getAllLeagues = async () => {
     const { data } = await axios.get(
@@ -33,9 +38,17 @@ export const TabLayoutController = (): TabLayoutControllerObject => {
     init();
   }, []);
 
+  const handleTabChange = (index: number) => {
+    setTabIndex(index);
+  }
+
   return {
     states: {
-      allLegaues,
+      allLeagues,
+      tabIndex,
+    },
+    actions: {
+      handleTabChange,
     }
   };
 };

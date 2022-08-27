@@ -5,16 +5,17 @@ import { TabHeader } from './TabHeader';
 
 export const TabLayout = () => {
   const {
-    states: { allLegaues },
+    states: { allLeagues, tabIndex },
+    actions: { handleTabChange }
   } = TabLayoutController();
 
-  if (!allLegaues) {
+  if (!allLeagues) {
     return <>불러오는 중..</>;
   }
 
   return (
-    <Tabs isFitted variant="soft-rounded">
-      <TabHeader allLeagues={allLegaues} />
+    <Tabs isFitted variant="soft-rounded" onChange={handleTabChange}>
+      <TabHeader allLeagues={allLeagues} />
       <TabContent />
     </Tabs>
   );
