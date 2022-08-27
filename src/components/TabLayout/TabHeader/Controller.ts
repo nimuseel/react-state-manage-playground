@@ -10,11 +10,11 @@ export const TabHeaderController = (
   allLeagues: Leagues[]
 ): TabHeaderControllerObject => {
   const getTabHeaderTitle = (): string[] => {
-    const leagueSlugs = allLeagues.map((leagues) => {
-      return leagues.slug;
+    const leagueAbbr = allLeagues.map((leagues) => {
+      return leagues.abbr;
     });
 
-    return leagueSlugs;
+    return leagueAbbr;
   };
 
   return {

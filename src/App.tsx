@@ -1,12 +1,14 @@
 import React from 'react';
 import { TabLayout } from './components/TabLayout';
-import { Container } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Container>
-      <TabLayout />
-    </Container>
+    <Box width="100vw" height="100vh">
+      <Flex justifyContent="center" height="100%" paddingTop={20}>
+        <TabLayout />
+      </Flex>
+    </Box>
   );
 }
 

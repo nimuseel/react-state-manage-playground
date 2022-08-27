@@ -1,7 +1,8 @@
-import { Tab, TabList } from '@chakra-ui/react';
+import { Image, Tab, TabList } from '@chakra-ui/react';
 import React from 'react';
 import { Leagues } from '../../../types/leagues';
 import { TabHeaderController } from './Controller';
+import { leagueImageSource } from './tabTitleData';
 
 interface TabHeaderProps {
   allLeagues: Leagues[];
@@ -18,7 +19,13 @@ export const TabHeader = ({ allLeagues }: TabHeaderProps) => {
     <>
       <TabList>
         {headerTitles.map((headerTitle) => (
-          <Tab key={headerTitle}>{headerTitle}</Tab>
+          <Tab key={headerTitle}>
+            <Image
+              src={leagueImageSource[headerTitle]}
+              alt="리그 이미지"
+              boxSize={50}
+            />
+          </Tab>
         ))}
       </TabList>
     </>

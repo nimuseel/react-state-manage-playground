@@ -6,7 +6,7 @@ import { TabHeader } from './TabHeader';
 export const TabLayout = () => {
   const {
     states: { allLeagues, tabIndex },
-    actions: { handleTabChange }
+    actions: { handleTabChange },
   } = TabLayoutController();
 
   if (!allLeagues) {
@@ -14,7 +14,12 @@ export const TabLayout = () => {
   }
 
   return (
-    <Tabs isFitted variant="soft-rounded" onChange={handleTabChange}>
+    <Tabs
+      isFitted
+      variant="soft-rounded"
+      onChange={handleTabChange}
+      minWidth="65rem"
+    >
       <TabHeader allLeagues={allLeagues} />
       <TabContent allLeagues={allLeagues} selectedTabIndex={tabIndex} />
     </Tabs>
