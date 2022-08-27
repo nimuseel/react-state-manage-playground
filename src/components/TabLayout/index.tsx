@@ -5,11 +5,9 @@ import { TabContent } from './TabContent';
 import { TabHeader } from './TabHeader';
 
 export const TabLayout = () => {
-  const { getAllLeagues } = TabLayoutController();
+  const { states: { allLegaues } } = TabLayoutController();
 
-  useEffect(() => {
-    getAllLeagues();
-  }, []);
+  console.log(allLegaues);
 
   return (
     <Tabs isFitted variant="soft-rounded">
