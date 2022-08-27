@@ -16,7 +16,7 @@ export const TabLayout = () => {
   return (
     <Tabs isFitted variant="soft-rounded" onChange={handleTabChange}>
       <TabHeader allLeagues={allLeagues} />
-      <TabContent />
+      <TabContent allLeagues={allLeagues} selectedTabIndex={tabIndex} />
     </Tabs>
   );
 };
