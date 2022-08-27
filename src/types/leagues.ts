@@ -6,5 +6,5 @@ export interface Leagues {
   logos: {
     dark: string;
     light: string;
-  };  
-};
+  };
+}

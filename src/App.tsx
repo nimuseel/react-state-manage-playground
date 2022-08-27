@@ -1,11 +1,12 @@
 import React from 'react';
 import { TabLayout } from './components/TabLayout';
+import { Container } from '@chakra-ui/react';
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <TabLayout />
-    </div>
+    </Container>
   );
 }
 
