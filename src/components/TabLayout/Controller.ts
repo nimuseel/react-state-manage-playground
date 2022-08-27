@@ -21,7 +21,11 @@ export const TabLayoutController = (): TabLayoutControllerObject => {
       'https://api-football-standings.azharimm.site/leagues'
     );
 
-    return data.data as Leagues[];
+    const typedResponseData = data.data as Leagues[];
+
+    const filteredLeague = typedResponseData.filter((leagues) => leagues.id.includes('eng') || leagues.id.includes('fra') || leagues.id.includes('ger') || leagues.id.includes('ita') || leagues.id.includes('esp'));
+
+    return filteredLeague;
   };
 
   useEffect(() => {
