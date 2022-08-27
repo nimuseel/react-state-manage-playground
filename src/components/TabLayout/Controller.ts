@@ -4,19 +4,19 @@ import { Leagues } from '../../types/leagues';
 
 interface TabLayoutControllerObject {
   states: {
-    allLegaues?: Leagues;
+    allLegaues?: Leagues[];
   };
 }
 
 export const TabLayoutController = (): TabLayoutControllerObject => {
-  const [allLegaues, setAllLeagues] = useState<Leagues>();
+  const [allLegaues, setAllLeagues] = useState<Leagues[]>();
 
   const getAllLeagues = async () => {
     const { data } = await axios.get(
       'https://api-football-standings.azharimm.site/leagues'
     );
 
-    return data as Leagues;
+    return data.data as Leagues[];
   };
 
   useEffect(() => {
