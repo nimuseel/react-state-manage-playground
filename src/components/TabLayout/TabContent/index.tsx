@@ -11,7 +11,6 @@ export const TabContent = ({
   nowPlayingMovies,
   selectedTabIndex,
 }: TabContentProps) => {
-  console.log(nowPlayingMovies);
   return (
     <TabPanels>
       {nowPlayingMovies.results.map((movie) => (
