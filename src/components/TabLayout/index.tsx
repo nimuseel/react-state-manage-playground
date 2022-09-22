@@ -1,5 +1,7 @@
 import { Tabs } from '@chakra-ui/react';
 import { TabLayoutController } from './Controller';
+import { TabHeader } from './TabHeader';
+import { TabContent } from './TabContent';
 
 export const TabLayout = () => {
   const {
@@ -18,8 +20,11 @@ export const TabLayout = () => {
       onChange={handleTabChange}
       minWidth="65rem"
     >
-      {/*<TabHeader allLeagues={allLeagues} />*/}
-      {/*<TabContent allLeagues={allLeagues} selectedTabIndex={tabIndex} />*/}
+      <TabHeader />
+      <TabContent
+        nowPlayingMovies={nowPlayingMovies}
+        selectedTabIndex={tabIndex}
+      />
     </Tabs>
   );
 };

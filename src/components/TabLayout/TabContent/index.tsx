@@ -3,7 +3,7 @@ import React from 'react';
 import { Movies } from '../../../types/movies';
 
 interface TabContentProps {
-  nowPlayingMovies: Movies[];
+  nowPlayingMovies: Movies;
   selectedTabIndex: number;
 }
 
@@ -11,11 +11,12 @@ export const TabContent = ({
   nowPlayingMovies,
   selectedTabIndex,
 }: TabContentProps) => {
+  console.log(nowPlayingMovies);
   return (
     <TabPanels>
-      {nowPlayingMovies.map((nowPlayingMovie, i) => (
-        <TabPanel key={i}>
-          {/*<span>{nowPlayingMovie[selectedTabIndex].name}</span>*/}
+      {nowPlayingMovies.results.map((movie) => (
+        <TabPanel key={movie.id}>
+          <span>{movie.title}</span>
         </TabPanel>
       ))}
     </TabPanels>

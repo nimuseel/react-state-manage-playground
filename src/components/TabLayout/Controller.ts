@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Movies } from '../../types/movies';
+import camelize from 'camelize-ts';
 
 interface TabLayoutControllerObject {
   states: {
@@ -27,14 +28,15 @@ export const TabLayoutController = (): TabLayoutControllerObject => {
       }
     );
 
-    setNowPlayingMovies(data.results);
+    const camelizeData = camelize(data);
+
+    setNowPlayingMovies(camelizeData as Movies);
   };
 
   useEffect(() => {
     const init = async () => {
       try {
         await getNowPlayingMovies();
-        // setAllLeagues(allLeaguesData);
       } catch (error) {
         alert('데이터를 불러오는 도중 문제가 발생했습니다.' + error);
       }
