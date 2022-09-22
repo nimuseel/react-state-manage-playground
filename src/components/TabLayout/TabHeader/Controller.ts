@@ -1,4 +1,4 @@
-import { Leagues } from '../../../types/leagues';
+import { Movies } from '../../../types/movies';
 
 interface TabHeaderControllerObject {
   actions: {
@@ -7,14 +7,14 @@ interface TabHeaderControllerObject {
 }
 
 export const TabHeaderController = (
-  allLeagues: Leagues[]
+  nowPlayingMovies: Movies[]
 ): TabHeaderControllerObject => {
   const getTabHeaderTitle = (): string[] => {
-    const leagueAbbr = allLeagues.map((leagues) => {
+    /*const leagueAbbr = nowPlayingMovies.map((leagues) => {
       return leagues.abbr;
-    });
+    });*/
 
-    return leagueAbbr;
+    return [''];
   };
 
   return {

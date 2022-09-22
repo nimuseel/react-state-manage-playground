@@ -1,17 +1,17 @@
 import { Image, Tab, TabList } from '@chakra-ui/react';
 import React from 'react';
-import { Leagues } from '../../../types/leagues';
+import { Movies } from '../../../types/movies';
 import { TabHeaderController } from './Controller';
 import { leagueImageSource } from './tabTitleData';
 
 interface TabHeaderProps {
-  allLeagues: Leagues[];
+  nowPlayingMovies: Movies[];
 }
 
-export const TabHeader = ({ allLeagues }: TabHeaderProps) => {
+export const TabHeader = ({ nowPlayingMovies }: TabHeaderProps) => {
   const {
     actions: { getTabHeaderTitle },
-  } = TabHeaderController(allLeagues);
+  } = TabHeaderController(nowPlayingMovies);
 
   const headerTitles = getTabHeaderTitle();
 

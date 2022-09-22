@@ -1,21 +1,21 @@
 import { TabPanel, TabPanels } from '@chakra-ui/react';
 import React from 'react';
-import { Leagues } from '../../../types/leagues';
+import { Movies } from '../../../types/movies';
 
 interface TabContentProps {
-  allLeagues: Leagues[];
+  nowPlayingMovies: Movies[];
   selectedTabIndex: number;
 }
 
 export const TabContent = ({
-  allLeagues,
+  nowPlayingMovies,
   selectedTabIndex,
 }: TabContentProps) => {
   return (
     <TabPanels>
-      {allLeagues.map((leagues) => (
-        <TabPanel key={leagues.slug}>
-          <span>{allLeagues[selectedTabIndex].name}</span>
+      {nowPlayingMovies.map((nowPlayingMovie, i) => (
+        <TabPanel key={i}>
+          {/*<span>{nowPlayingMovie[selectedTabIndex].name}</span>*/}
         </TabPanel>
       ))}
     </TabPanels>

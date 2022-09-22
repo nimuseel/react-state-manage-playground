@@ -1,15 +1,13 @@
 import { Tabs } from '@chakra-ui/react';
 import { TabLayoutController } from './Controller';
-import { TabContent } from './TabContent';
-import { TabHeader } from './TabHeader';
 
 export const TabLayout = () => {
   const {
-    states: { allLeagues, tabIndex },
+    states: { nowPlayingMovies, tabIndex },
     actions: { handleTabChange },
   } = TabLayoutController();
 
-  if (!allLeagues) {
+  if (!nowPlayingMovies) {
     return <>불러오는 중..</>;
   }
 
@@ -20,8 +18,8 @@ export const TabLayout = () => {
       onChange={handleTabChange}
       minWidth="65rem"
     >
-      <TabHeader allLeagues={allLeagues} />
-      <TabContent allLeagues={allLeagues} selectedTabIndex={tabIndex} />
+      {/*<TabHeader allLeagues={allLeagues} />*/}
+      {/*<TabContent allLeagues={allLeagues} selectedTabIndex={tabIndex} />*/}
     </Tabs>
   );
 };
